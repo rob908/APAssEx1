@@ -18,13 +18,8 @@ public class RailwayMaker {
 		myStations.createStation();
 	}	
 	
-	public void railway() {
-		String realStation = "|----" +  myStations.stations.get(0) + "------|" + trackMaker() + ;
-		System.out.println(realStation);
-	}
-	public static void main(String[] args) {
-		RailwayMaker x = new RailwayMaker();
-		x.stationMaker();
-		x.railway();
-	}
+//	public static void main(String[] args) {
+//		RailwayMaker x = new RailwayMaker();
+//		x.stationMaker();
+//	}
 }
