@@ -12,8 +12,8 @@ public class Runme implements Runnable {
 		int numberTrain = 0;
 		while(true) {
 			Integer nextVal = numberTrain++ ;
-			train.addTrain(nextVal);
-			System.out.print("|---- Track, " + train.getTrain() + "----|");
+//			train.addTrain(nextVal);
+			System.out.print(train.getTrain());
 			try {
 				Thread.sleep(1000);
 			}catch(InterruptedException e) {
