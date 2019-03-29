@@ -30,6 +30,7 @@ import java.util.ArrayList;
 			this.capacity = capacity;
 		}
 		
+		//method to add train to piece of track
 		public void addTrain(Train myTrain) {
 			lock.lock();
 			try {
@@ -44,6 +45,7 @@ import java.util.ArrayList;
 		            }lock.unlock(); 
 		}
 		
+		//method to remove train from piece of track
 		public void removeTrain() {
 			lock.lock();
 			myTrain.setTrack(null);

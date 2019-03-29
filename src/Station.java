@@ -6,3 +6,5 @@ public class Station extends Track {
 			length = 200;
 	}
 } 
+
+//class is an extension of type track

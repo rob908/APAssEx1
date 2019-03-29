@@ -8,6 +8,8 @@ public class Printer extends Thread {
 	protected RailwayMaker myRail = new RailwayMaker();
 	StringBuilder bob = new StringBuilder();
 	
+	//class uses a string builder object (bob) to print the status of the railway. bob builds the railway, and shows it to his friends.
+	
 	public void run() {
 		while(true) {
 			bob.append(Glasgow);
@@ -39,9 +41,9 @@ public class Printer extends Thread {
 				bob.append(myRail.robsRail.get(6).trainsOnTrack.get(i).getTrainID() + ",");
 			}
 			
-			bob.append("|");
+			bob.append("|"); //adds a | at the end of each string
 			System.out.println(bob);
-			bob.setLength(0);
+			bob.setLength(0);//stops an exception being thrown
 			try {
 				Thread.sleep(1000); 
 			} catch (InterruptedException e) {

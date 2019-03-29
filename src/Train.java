@@ -10,6 +10,8 @@ import java.util.concurrent.locks.*;
 		protected int nextTrainID;
 		protected RailwayMaker makeMyRail;
 		
+		
+		//train constructor 
 		public Train (String trainSpeed, Track whichTrack) {
 			if (trainSpeed == "fast") {
 				speed = 1000;
@@ -32,6 +34,7 @@ import java.util.concurrent.locks.*;
 		public void setSpeed(String setSpeed) { 
 			this.setSpeed = setSpeed;
 		}
+		
 		public Track getTrack() {
 			return myTrack;
 		}
@@ -45,9 +48,11 @@ import java.util.concurrent.locks.*;
 		}
 	
 		public void setTrainID(int trainID) {
-			this.nextTrainID = trainID;
+			this.trainID = trainID;
 		}
 		
+		//variable for track type. may be better way to do this but for some reason using instance of in the run method 
+		//seemed to cause problems. probably (definitely) me just being stupid.
 		public int typeOfTrack() {
 			int x = 0;
 			if (this.getTrack() instanceof TrackSection) {
@@ -59,6 +64,9 @@ import java.util.concurrent.locks.*;
 			return x;
 		}
 		
+		
+		//determines capacity and type of track. if it's a station it's capacity will be 1+, a track sections will only be 1
+		//time spent on track section (sleep) is determined by length of track / speed of train x 1000 to make things faster.
 		public void run() {
 			robsRail = makeMyRail.robsRail;
 			while (true) {
@@ -78,6 +86,7 @@ import java.util.concurrent.locks.*;
 						break;
 					}
 					
+					//adds train to next bit of track and removes train section of track (not properly working!!!)
 					for (int i = 0; i < robsRail.size() - 1; i++) {
 						if (this.getTrack() == robsRail.get(i)) {
 							robsRail.get(i + 1).addTrain(this);

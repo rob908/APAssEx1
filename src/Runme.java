@@ -9,12 +9,13 @@ public class Runme {
 		myPrinter.myRail = myRail; 
 		myPrinter.start();
 		try {
+			while (true) {
 			myRail.join();
 			myPrinter.join();
-			
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
 } 
- 
+ //arrrrrghh almost working
